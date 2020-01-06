@@ -1,0 +1,278 @@
+2020-01-03 09:56:55,392 ERROR test_connect：139  D:\pycharm resource\Projects\BackDB\models.py  测试数据库连接发生错误：192.168.40.135，原因：('%d format: a number is required, not str',)
+2020-01-03 09:56:55,397 ERROR log_exception：1891  D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py  Exception on /db/192.168.40.135 [POST]
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\BackDB\models.py", line 129, in test_connect
+    database=db_name)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 325, in __init__
+    self.connect()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 589, in connect
+    self.host_info = "socket %s:%d" % (self.host, self.port)
+TypeError: %d format: a number is required, not str
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\views.py", line 163, in dispatch_request
+    return meth(*args, **kwargs)
+  File "D:\pycharm resource\Projects\BackDB\app.py", line 89, in post
+    result = DB.test_connect(host, user, pwd, port, db_name)
+  File "D:\pycharm resource\Projects\BackDB\models.py", line 142, in test_connect
+    ret['data'] = e.args[1]
+IndexError: tuple index out of range
+2020-01-03 09:58:41,875 ERROR test_connect：139  D:\pycharm resource\Projects\BackDB\models.py  测试数据库连接发生错误：192.168.40.135，原因：(1049, "Unknown database 'aa'")
+2020-01-03 10:01:05,167 ERROR log_exception：1891  D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py  Exception on /db/192.168.40.135 [POST]
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\engine\base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\engine\default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1062, "Duplicate entry 'root' for key 'user'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\views.py", line 163, in dispatch_request
+    return meth(*args, **kwargs)
+  File "D:\pycharm resource\Projects\BackDB\app.py", line 96, in post
+    db.session.commit()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\session.py", line 1036, in commit
+    self.transaction.commit()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\session.py", line 503, in commit
+    self._prepare_impl()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\session.py", line 482, in _prepare_impl
+    self.session.flush()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\session.py", line 2479, in flush
+    self._flush(objects)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\session.py", line 2617, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+    raise value
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\session.py", line 2577, in _flush
+    flush_context.execute()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
+    uow,
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
+    insert,
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\persistence.py", line 1137, in _emit_insert_statements
+    statement, params
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\engine\base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\sql\elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\engine\base.py", line 1101, in _execute_clauseelement
+    distilled_params,
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\engine\base.py", line 1250, in _execute_context
+    e, statement, parameters, cursor, context
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\engine\base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\util\compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\util\compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\engine\base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\engine\default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1062, "Duplicate entry 'root' for key 'user'")
+[SQL: INSERT INTO `DB` (user, password, port, db_name, host_id) VALUES (%(user)s, %(password)s, %(port)s, %(db_name)s, %(host_id)s)]
+[parameters: {'user': 'root', 'password': 'K+Z3QVxlzFGUdQqAniSSphIiL+Y+3vrdjz8XYzHgqXI=\n', 'port': '3306', 'db_name': 'cbs', 'host_id': None}]
+(Background on this error at: http://sqlalche.me/e/gkpj)
+2020-01-03 15:56:24,211 INFO post：270  D:\pycharm resource\Projects\BackDB\app.py  批量命令执行成功！
+2020-01-03 15:57:29,178 INFO post：270  D:\pycharm resource\Projects\BackDB\app.py  批量命令执行成功！
+2020-01-03 16:11:07,137 INFO post：273  D:\pycharm resource\Projects\BackDB\app.py  批量命令执行成功！
+2020-01-03 16:17:43,296 INFO do_run_command：60  D:\pycharm resource\Projects\BackDB\utils\common\conn_server.py  远程连接发关闭：<paramiko.client.SSHClient object at 0x000001B4072A6048>
+2020-01-03 16:26:42,993 ERROR log_exception：1891  D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py  Exception on /file [POST]
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\BackDB\app.py", line 238, in post
+    BatchOperation().send(local_file_path, remote_file_path, host_list)
+  File "D:\pycharm resource\Projects\BackDB\utils\common\file_transfer.py", line 111, in send
+    s.put(local_path, remote_path)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\paramiko\sftp_client.py", line 759, in put
+    return self.putfo(fl, remotepath, file_size, callback, confirm)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\paramiko\sftp_client.py", line 714, in putfo
+    with self.file(remotepath, "wb") as fr:
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\paramiko\sftp_client.py", line 372, in open
+    t, msg = self._request(CMD_OPEN, filename, imode, attrblock)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\paramiko\sftp_client.py", line 813, in _request
+    return self._read_response(num)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\paramiko\sftp_client.py", line 865, in _read_response
+    self._convert_status(msg)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\paramiko\sftp_client.py", line 896, in _convert_status
+    raise IOError(errno.EACCES, text)
+PermissionError: [Errno 13] Permission denied
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\views.py", line 163, in dispatch_request
+    return meth(*args, **kwargs)
+  File "D:\pycharm resource\Projects\BackDB\app.py", line 247, in post
+    logger.error('上传下载文件失败，原因：%s' % e.args)
+TypeError: not all arguments converted during string formatting
+2020-01-03 16:28:12,045 ERROR log_exception：1891  D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py  Exception on /file [POST]
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\BackDB\app.py", line 238, in post
+    BatchOperation().send(local_file_path, remote_file_path, host_list)
+  File "D:\pycharm resource\Projects\BackDB\utils\common\file_transfer.py", line 111, in send
+    s.put(local_path, remote_path)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\paramiko\sftp_client.py", line 759, in put
+    return self.putfo(fl, remotepath, file_size, callback, confirm)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\paramiko\sftp_client.py", line 714, in putfo
+    with self.file(remotepath, "wb") as fr:
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\paramiko\sftp_client.py", line 372, in open
+    t, msg = self._request(CMD_OPEN, filename, imode, attrblock)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\paramiko\sftp_client.py", line 813, in _request
+    return self._read_response(num)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\paramiko\sftp_client.py", line 865, in _read_response
+    self._convert_status(msg)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\paramiko\sftp_client.py", line 896, in _convert_status
+    raise IOError(errno.EACCES, text)
+PermissionError: [Errno 13] Permission denied
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\views.py", line 163, in dispatch_request
+    return meth(*args, **kwargs)
+  File "D:\pycharm resource\Projects\BackDB\app.py", line 247, in post
+    logger.error('上传下载文件失败，原因：%s' % e.args)
+TypeError: not all arguments converted during string formatting
+2020-01-03 16:29:06,584 ERROR log_exception：1891  D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py  Exception on /file [POST]
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\BackDB\app.py", line 238, in post
+    BatchOperation().send(local_file_path, remote_file_path, host_list)
+  File "D:\pycharm resource\Projects\BackDB\utils\common\file_transfer.py", line 111, in send
+    s.put(local_path, remote_path)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\paramiko\sftp_client.py", line 759, in put
+    return self.putfo(fl, remotepath, file_size, callback, confirm)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\paramiko\sftp_client.py", line 714, in putfo
+    with self.file(remotepath, "wb") as fr:
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\paramiko\sftp_client.py", line 372, in open
+    t, msg = self._request(CMD_OPEN, filename, imode, attrblock)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\paramiko\sftp_client.py", line 813, in _request
+    return self._read_response(num)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\paramiko\sftp_client.py", line 865, in _read_response
+    self._convert_status(msg)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\paramiko\sftp_client.py", line 896, in _convert_status
+    raise IOError(errno.EACCES, text)
+PermissionError: [Errno 13] Permission denied
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\views.py", line 163, in dispatch_request
+    return meth(*args, **kwargs)
+  File "D:\pycharm resource\Projects\BackDB\app.py", line 247, in post
+    logger.error('上传下载文件失败，原因：%s' % e.args)
+TypeError: not all arguments converted during string formatting
+2020-01-03 16:31:11,802 INFO post：239  D:\pycharm resource\Projects\BackDB\app.py  文件上传成功！

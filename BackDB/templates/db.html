@@ -1,0 +1,49 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% from "bootstrap/form.html" import render_form_row %}
+
+{% extends 'base.html' %}
+
+{% block title %} 添加数据库 {% endblock %}
+
+<!--面包屑导航-->
+{% block breadcrumb %}
+    <ol class="breadcrumb">
+        <li><a href="/">首页</a></li>
+        <li class="active">添加数据库</li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="col-md-6 col-md-offset-3">
+            {% for message in get_flashed_messages() %}
+                <div class="alert alert-danger" role="alert">{{ message }}</div>
+            {% endfor %}
+
+            <form class="form-signin" action="{{ url_for('db', host=host) }}" method="post" novalidate>
+                {{ form.csrf_token }}
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group required"><label class="form-control-label" for="user">主机名</label>
+                            <input class="form-control" id="host" name="user" required="" type="text" value="{{ host }}"
+                            disabled="disabled">
+                        </div>
+                    </div>
+                </div>
+
+                {{ render_form_row([form.user]) }}
+                {{ render_form_row([form.password]) }}
+                {{ render_form_row([form.port]) }}
+                {{ render_form_row([form.db]) }}
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+            </form>
+        </div>
+
+    </div> <!-- /container -->
+
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

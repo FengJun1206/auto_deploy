@@ -1,0 +1,255 @@
+{% extends 'base.html' %}
+
+{% import "bootstrap/wtf.html" as wtf %}
+{% from "bootstrap/form.html" import render_form_row %}
+
+{% block title %} 文件操作 {% endblock %}
+
+{% block css %}
+    <style>
+        .btn-item {
+            margin-bottom: 15px;
+            margin-right: 20px;
+        }
+
+        li {
+            list-style: none;
+        }
+    </style>
+{% endblock %}
+
+<!--面包屑导航-->
+{% block breadcrumb %}
+    <ol class="breadcrumb">
+        <li><a href="/">首页</a></li>
+        <li class="active">文件操作</li>
+    </ol>
+{% endblock %}
+
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <!--左侧-->
+                    <div class="panel col-md-4">
+                        <div class="panel-heading">
+                            <h4 class="panel-title text-center">可操作的主机列表</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <button type="button" class="btn btn-primary btn-sm btn-item" onclick="All(this)">
+                                        全选
+                                    </button>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="button" class="btn btn-primary btn-sm btn-item"
+                                            onclick="Reverse(this)">反选
+                                    </button>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="button" class="btn btn-primary btn-sm btn-item"
+                                            onclick="Cancel(this)">取消
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 20px">
+                                <div class="col-md-8">
+                                    <input type="text" placeholder="搜索" class="form-control">
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="button" class="btn btn-primary btn-sm">搜索</button>
+                                </div>
+                            </div>
+
+                            <div class="row" style="margin-top: 40px">
+                                <div class="col-md-12">
+                                    <a class="list-group-item text-center">
+                                        可选主机列表
+                                        <!--<span class="badge badge-primary">可选主机列表</span>-->
+                                    </a>
+
+                                    <ul style="margin-top: 20px" id="host_list">
+                                        {% for host in host_list %}
+                                            <li>
+                                                <input type="checkbox" value="{{ host.name }}@{{ host.addr }}">{{ host.name }}@{{ host.addr }}
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--右侧-->
+                    <div class="panel col-md-7" style="margin-left: 60px">
+                        <div class="panel-heading">
+                            <div class="alert alert-warning hide" role="alert" id="show_msg"></div>
+                            <h4 class="panel-title text-center">文件传输</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label>操作</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <select class="form-control" onchange="SelectFileType(this)">
+                                        <option value="send">向远程主机上传文件</option>
+                                        <option value="get">从远程主机下载文件</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <button type="button" class="btn btn-primary btn-sm"
+                                            onclick="Upload(this)" id="upload">上传
+                                    </button>
+
+                                    <button type="button" class="btn btn-primary btn-sm hide"
+                                            onclick="Download(this)" id="download">下载
+                                    </button>
+                                </div>
+
+                            </div>
+
+                            <div class="row" style="margin-top: 20px">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" placeholder="本地文件路径" class="form-control"
+                                                   id="local_file_path">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" placeholder="远程主机路径" class="form-control"
+                                                   id="remote_file_path">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block js %}
+    <script>
+        // 判断文件类型
+        function SelectFileType(that) {
+            var select_value = $(that).val();
+
+            // 上传时，隐藏下载按钮
+            if (select_value === 'send') {
+                $('#download').addClass('hide');
+                $('#upload').removeClass('hide');
+            }
+
+            if (select_value === 'get') {
+                $('#download').removeClass('hide');
+                $('#upload').addClass('hide');
+            }
+        }
+
+        // 上传
+        function Upload(that) {
+            let url = '/file?flag=upload';
+            FileTransfer(url);
+        }
+
+        // 下载
+        function Download(that) {
+            let url = '/file?flag=download';
+            FileTransfer(url);
+        }
+
+        // 文件传输
+        function FileTransfer(url) {
+            let host_lit = check_value();
+            console.log(host_lit);
+
+            if (host_lit.length === 0) {
+                show_msg('请选择主机！');
+                return;
+            }
+            let local_file_path = $('#local_file_path').val();
+            let remote_file_path = $('#remote_file_path').val();
+
+            if (!local_file_path || !remote_file_path) {
+                show_msg('不能为空！');
+                return;
+            }
+
+            $.post({
+                url: url,
+                method: 'post',
+                data: {'local': local_file_path, 'remote': remote_file_path, 'host_list': JSON.stringify(host_lit)},
+                dataType: 'json',
+                success: function (resp) {
+                    console.log(resp);
+                    show_msg(resp.msg);
+                }
+            })
+        }
+
+        // 全选
+        function All(that) {
+            $.each($("#host_list li"), function () {
+                let input_elem = $(this).find('input');
+                $(input_elem).prop('checked', true);
+            })
+        }
+
+        // 反选
+        function Reverse(that) {
+            $.each($("#host_list li"), function () {
+                let input_elem = $(this).find('input');
+
+                if ($(input_elem).prop('checked')) {
+                    $(input_elem).prop('checked', false);
+                } else {
+                    $(input_elem).prop('checked', true);
+                }
+            })
+        }
+
+        // 取消
+        function Cancel(that) {
+            $.each($("#host_list li"), function () {
+                let input_elem = $(this).find('input');
+                $(input_elem).prop('checked', false);
+            })
+        }
+
+        // 获取 checkbox 值
+        function check_value() {
+            let host_list = [];
+            $.each($("#host_list li"), function () {
+                let input_elem = $(this).find('input');
+                if ($(input_elem).prop('checked')) {
+                    host_list.push($(input_elem).val());
+                }
+            });
+
+            return host_list
+        }
+
+        // 信息提示
+        function show_msg(msg) {
+            $('#show_msg').removeClass('hide');
+            $('#show_msg').text(msg);
+
+            setTimeout(function () {
+                $('#show_msg').addClass('hide');
+            }, 2000)
+        }
+    </script>
+{% endblock %}

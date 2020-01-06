@@ -1,0 +1,457 @@
+2019-12-31 17:03:52,760 INFO post：156  D:\pycharm resource\Projects\BackDB\app.py  批量命令执行成功！
+2019-12-31 17:30:13,616 ERROR log_exception：1891  D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py  Exception on /register [GET]
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\pycharm resource\Projects\BackDB\app.py", line 95, in register
+    return render_template(request, 'register.html', form=form)
+TypeError: render_template() takes 1 positional argument but 2 were given
+2019-12-31 17:30:33,255 ERROR log_exception：1891  D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py  Exception on /register [GET]
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\pycharm resource\Projects\BackDB\app.py", line 95, in register
+    return render_template(request, 'register.html', form=form)
+TypeError: render_template() takes 1 positional argument but 2 were given
+2019-12-31 17:53:18,704 ERROR log_exception：1891  D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py  Exception on /register [POST]
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1967, in finalize_request
+    response = self.make_response(rv)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2097, in make_response
+    "The view function did not return a valid response. The"
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2019-12-31 17:53:49,916 ERROR log_exception：1891  D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py  Exception on /register [POST]
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1967, in finalize_request
+    response = self.make_response(rv)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2097, in make_response
+    "The view function did not return a valid response. The"
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2019-12-31 18:10:02,559 ERROR log_exception：1891  D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py  Exception on /register [POST]
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\pycharm resource\Projects\BackDB\app.py", line 108, in register
+    return flash(form.error)
+AttributeError: 'RegisterForm' object has no attribute 'error'
+2019-12-31 18:13:36,614 ERROR log_exception：1891  D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py  Exception on /register [POST]
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\pycharm resource\Projects\BackDB\app.py", line 108, in register
+    return flash(form.error)
+AttributeError: 'RegisterForm' object has no attribute 'error'
+2019-12-31 18:15:18,305 ERROR log_exception：1891  D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py  Exception on /register [POST]
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\pycharm resource\Projects\BackDB\app.py", line 108, in register
+    print(form.error)
+AttributeError: 'RegisterForm' object has no attribute 'error'
+2019-12-31 18:15:38,339 ERROR log_exception：1891  D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py  Exception on /register [POST]
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\pycharm resource\Projects\BackDB\app.py", line 109, in register
+    return flash(form.error)
+AttributeError: 'RegisterForm' object has no attribute 'error'
+2019-12-31 18:15:53,700 ERROR log_exception：1891  D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py  Exception on /register [POST]
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1967, in finalize_request
+    response = self.make_response(rv)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2097, in make_response
+    "The view function did not return a valid response. The"
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2019-12-31 18:16:39,081 ERROR log_exception：1891  D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py  Exception on /register [POST]
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1967, in finalize_request
+    response = self.make_response(rv)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2097, in make_response
+    "The view function did not return a valid response. The"
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2019-12-31 18:17:12,375 ERROR log_exception：1891  D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py  Exception on /register [POST]
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1967, in finalize_request
+    response = self.make_response(rv)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2097, in make_response
+    "The view function did not return a valid response. The"
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2019-12-31 18:23:58,376 ERROR log_exception：1891  D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py  Exception on /register [POST]
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\engine\base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\engine\default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.DataError: (1406, "Data too long for column 'password' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\pycharm resource\Projects\BackDB\app.py", line 104, in register
+    db.session.commit()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\session.py", line 1036, in commit
+    self.transaction.commit()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\session.py", line 503, in commit
+    self._prepare_impl()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\session.py", line 482, in _prepare_impl
+    self.session.flush()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\session.py", line 2479, in flush
+    self._flush(objects)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\session.py", line 2617, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+    raise value
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\session.py", line 2577, in _flush
+    flush_context.execute()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
+    uow,
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
+    insert,
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\persistence.py", line 1137, in _emit_insert_statements
+    statement, params
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\engine\base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\sql\elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\engine\base.py", line 1101, in _execute_clauseelement
+    distilled_params,
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\engine\base.py", line 1250, in _execute_context
+    e, statement, parameters, cursor, context
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\engine\base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\util\compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\util\compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\engine\base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\engine\default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.DataError: (pymysql.err.DataError) (1406, "Data too long for column 'password' at row 1")
+[SQL: INSERT INTO user_profile (username, password, is_super, created_time) VALUES (%(username)s, %(password)s, %(is_super)s, %(created_time)s)]
+[parameters: {'username': 'rose', 'password': 'pbkdf2:sha256:150000$OXjfUshH$717f442bd9d860850d34f244ef0cac9b55bde2cb63e732d9585d05ddf0203fdc', 'is_super': 0, 'created_time': datetime.datetime(2019, 12, 31, 18, 23, 39, 366291)}]
+(Background on this error at: http://sqlalche.me/e/9h9h)
+2019-12-31 18:31:33,180 ERROR log_exception：1891  D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py  Exception on /register [POST]
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\engine\base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\engine\default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.DataError: (1406, "Data too long for column 'password' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\pycharm resource\Projects\BackDB\app.py", line 107, in register
+    db.session.commit()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\session.py", line 1036, in commit
+    self.transaction.commit()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\session.py", line 503, in commit
+    self._prepare_impl()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\session.py", line 482, in _prepare_impl
+    self.session.flush()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\session.py", line 2479, in flush
+    self._flush(objects)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\session.py", line 2617, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+    raise value
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\session.py", line 2577, in _flush
+    flush_context.execute()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
+    uow,
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
+    insert,
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\orm\persistence.py", line 1137, in _emit_insert_statements
+    statement, params
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\engine\base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\sql\elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\engine\base.py", line 1101, in _execute_clauseelement
+    distilled_params,
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\engine\base.py", line 1250, in _execute_context
+    e, statement, parameters, cursor, context
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\engine\base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\util\compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\util\compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\engine\base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\sqlalchemy\engine\default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.DataError: (pymysql.err.DataError) (1406, "Data too long for column 'password' at row 1")
+[SQL: INSERT INTO user_profile (username, password, is_super, created_time) VALUES (%(username)s, %(password)s, %(is_super)s, %(created_time)s)]
+[parameters: {'username': 'rose', 'password': 'pbkdf2:sha256:150000$oXWQ62y8$3eb60dbd7953e44c602dbe8cca54f44a1f038d17adf63dde5dd14cfcfef0e7de', 'is_super': 0, 'created_time': datetime.datetime(2019, 12, 31, 18, 31, 28, 893725)}]
+(Background on this error at: http://sqlalche.me/e/9h9h)
+2019-12-31 19:03:28,966 ERROR log_exception：1891  D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py  Exception on /login [POST]
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\pycharm resource\Projects\BackDB\app.py", line 128, in login
+    if not UserProfile().confirm_password(password):
+TypeError: confirm_password() missing 1 required positional argument: 'password'
+2019-12-31 19:04:14,333 ERROR log_exception：1891  D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py  Exception on /login [POST]
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\pycharm resource\Projects\BackDB\app.py", line 128, in login
+    if not UserProfile().confirm_password(password):
+TypeError: confirm_password() missing 1 required positional argument: 'password'
+2019-12-31 19:17:59,837 ERROR log_exception：1891  D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py  Exception on /login [POST]
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\pycharm resource\Projects\BackDB\app.py", line 128, in login
+    if not UserProfile().check_password(password):
+  File "D:\pycharm resource\Projects\BackDB\models.py", line 33, in check_password
+    return check_password_hash(self.pwd_hash, password)
+AttributeError: 'UserProfile' object has no attribute 'pwd_hash'
+2019-12-31 19:18:39,469 ERROR log_exception：1891  D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py  Exception on /login [POST]
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\pycharm resource\Projects\BackDB\app.py", line 128, in login
+    if not UserProfile().check_password(password):
+  File "D:\pycharm resource\Projects\BackDB\models.py", line 33, in check_password
+    print(self.pwd_hash, password)
+AttributeError: 'UserProfile' object has no attribute 'pwd_hash'
+2019-12-31 19:25:49,432 ERROR log_exception：1891  D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py  Exception on /login [POST]
+Traceback (most recent call last):
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\pycharm resource\Projects\virtual\back_db\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\pycharm resource\Projects\BackDB\app.py", line 128, in login
+    if not UserProfile().check_password(password):
+TypeError: check_password() missing 1 required positional argument: 'password'

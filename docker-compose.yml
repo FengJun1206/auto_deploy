@@ -1,0 +1,57 @@
+version: '3'
+
+services:
+  flask_app:
+    build: .
+    restart: always
+    volumes:
+      - .:/code
+      - logfile:/code/BackDB/logfile/
+      - static_volume:/code/BackDB/static/
+    networks:
+      - nginx_network
+      - db_network
+    depends_on:
+      - db
+    environment:
+      - TZ=Asia/Shanghai
+
+  db:
+    image: mysql:5.7
+    restart: always
+    ports:
+      - "3310:3306"
+    volumes:
+      - db_volume:/var/lib/mysql
+    networks:
+      - db_network
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=Flask_test
+      - TZ=Asia/Shanghai
+
+  nginx:
+    restart: always
+    image: nginx:latest
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./nginx_config/nginx/conf.d:/etc/nginx/conf.d
+      - static_volume:/code/BackDB/static/
+    depends_on:
+      - flask_app
+    networks:
+      - nginx_network
+    environment:
+      - TZ=Asia/Shanghai
+
+networks:
+  nginx_network:
+    driver: bridge
+  db_network:
+    driver: bridge
+
+volumes:
+  db_volume:
+  static_volume:
+  logfile:

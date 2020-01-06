@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+
+{% block title %} 日志监控 {% endblock %}
+
+{% block css %}
+
+{% endblock %}
+
+
+<!--面包屑导航-->
+{% block breadcrumb %}
+    <ol class="breadcrumb">
+        <li><a href="/">首页</a></li>
+        <li class="active">日志监控</li>
+    </ol>
+{% endblock %}
+
+
+<!--主要内容区-->
+{% block content %}
+    <div class="container">
+        <div class="row clearfix">
+            <form id="post-form">
+                <div class="col-md-4 column">
+                    <select class="form-control" id="host">
+                        <option value="0">请选择主机地址</option>
+                        {% for host in host_list %}
+                            <option id="{{ host.id }}">{{ host.addr }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="col-md-6 column">
+                    <input type="text" class="form-control" id="command" name="command" placeholder="远程命令">
+
+                </div>
+
+                <div class="col-md-2 column">
+                    <button type="submit" class="btn btn-default btn-primary" style="color: white">确定</button>
+                    <button type="button" class="btn btn-default btn-primary" style="color: white" onclick="Clear(this)">清屏</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="row clearfix" style="margin-top: 20px">
+            <div class="col-md-12 column">
+                <textarea class="form-control" id="chat-log" disabled rows="20"
+                          style="height:400px;overflow_y:scroll;overflow:auto"></textarea>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+{% block js %}
+    <script>
+        (function () {
+            document.getElementById("post-form").onsubmit = function (e) {
+                e.preventDefault();
+                // 清空内容
+                $('#chat-log').empty();
+
+                let host = $('#host').val();
+                let command = $('#command').val();
+                if (host === "0" || !command) {
+                    alert('请选择主机或命令不能为空！');
+                    return;
+                }
+
+                $.ajax({
+                    url: '/tail',
+                    type: 'POST',
+                    data: {'host': host, 'command': command},
+                    dataType: 'json',
+                    success: function (resp) {
+                        console.log(resp);
+                        var source = new EventSource('/stream?channel=' + resp.uid);
+                        source.addEventListener('message', function (event) {
+                            console.log(event.data);
+                            var res = JSON.parse(event.data);
+                            document.querySelector('#chat-log').value += (res.message + '\n');
+                        })
+                    }
+
+                });
+
+            }
+        })();
+
+
+        // 清屏
+        function Clear(that) {
+            $('#chat-log').val('');
+        }
+    </script>
+
+
+{% endblock %}
+
